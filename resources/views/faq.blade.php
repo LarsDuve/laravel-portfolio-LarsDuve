@@ -34,7 +34,7 @@
                 <li><h3>What do you need to do when you are sick / show symptoms of coronavirus?</h3></li>
                 <p>If you find yourself not feeling too well, report it to your teacher and stay home.</p>
                 <li><h3>How can you book a project space in one of the wings?</h3></li>
-                <p>On <a href="https://topdesk.hz.nl/tas/public/ssp/">topdesk.hz.nl</a> you can reserve a project space to use.</p>
+                <p>On <a href="https://topdesk.hz.nl/tas/public/ssp/" target="_blank">topdesk.hz.nl</a> you can reserve a project space to use.</p>
                 <li><h3>What are the instructions if you want to park your car at the HZ parking lot?</h3></li>
                 <p>HZ has 100 reserved parking spots at <a href="https://www.google.com/maps/place/Poelendaelesingel+10,+4335+JA+Middelburg/@51.4930992,3.6062657,17z/data=!3m1!4b1!4m5!3m4!1s0x47c490d068a08c9b:0x4580815107393f4!8m2!3d51.4930992!4d3.6084544" target="_blank">Poelendaelesingel 10.</a> You can acces free parking by using your student pass to enter the terrain.</p>
             </ul>

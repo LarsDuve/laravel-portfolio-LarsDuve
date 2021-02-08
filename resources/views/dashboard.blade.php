@@ -63,13 +63,13 @@
                 </tr>
                 <tr style="height: 45px;">
                     <td>Project</td>
-                    <td>-</td>
+                    <td>6,0</td>
                 </tr>
                 <tr style="height: 45px;">
                     <td>Profesional Skills 1</td>
                     <td>2,5</td>
                     <td>Portfolio Exam</td>
-                    <td>-</td>
+                    <td>7,5</td>
                 </tr>
                 <tr style="height: 45px;">
                     <td rowspan="5">3</td>
@@ -140,7 +140,7 @@
             </table>
             <div id="flexbox-container">
                 <!--Between div, adjust the percentage based on your progress. (also in main.css)-->
-                <div id="flexbox-progress">25%</div>
+                <div id="flexbox-progress">49%</div>
             </div>
             <h2>Study links</h2>
             <ul>

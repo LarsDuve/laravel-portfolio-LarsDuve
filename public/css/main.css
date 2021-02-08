@@ -31,7 +31,7 @@ ul {
 header {
     padding: 20px 0;
 }
-  
+
 header nav {
     display: flex;
     justify-content: flex-end;
@@ -57,11 +57,11 @@ header a {
     background-color: rgb(28, 0, 128);
     overflow: hidden;
 }
-  
+
 .nav li {
     float: left;
 }
-  
+
 .nav li a {
     display: block;
     color: white;
@@ -69,7 +69,7 @@ header a {
     padding: 14px 16px;
     text-decoration: none;
 }
-  
+
 .nav li a:hover:not(.active) {
     background-color: rgb(7, 0, 100);
 }
@@ -94,12 +94,11 @@ td {
 
 #flexbox-progress {
     background-color: green;
-    /*In width, adjust the precentage based on your progress. (also in dashboard.html)*/
-    width: 25%;
+    /*In width, adjust the percentage based on your progress. (also in dashboard.blade.php)*/
+    width: 49%;
     height: 19px;
     text-align: center;
     margin: 1px;
     color: white;
 }
 
- 

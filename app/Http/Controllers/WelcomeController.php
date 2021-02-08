@@ -4,6 +4,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Faq;
+use App\Models\Post;
+
 class WelcomeController
 {
     public function show()
@@ -24,10 +27,17 @@ class WelcomeController
     }
     public function faq()
     {
-        return view('faq');
+//        return view('faq');
+        {
+            $faq = Faq::all();
+            return view('faqs', [
+                'faqs' => $faq
+            ]);
+        }
     }
     public function professions()
     {
         return view('professions');
     }
-}
+
+    }

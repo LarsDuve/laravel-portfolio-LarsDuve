@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\WelcomeController;;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +21,5 @@ Route::get('/motivation', [WelcomeController::class, 'motivation']);
 Route::get('/professions', [WelcomeController::class, 'professions']);
 Route::get('/profile', [WelcomeController::class, 'profile']);
 Route::get('/dashboard', [WelcomeController::class, 'dashboard']);
+Route::get('/posts/{post}', [PostsController::class, 'show']);
+Route::get('/faqs', [PostsController::class, 'show']);
