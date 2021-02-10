@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ArticlesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [WelcomeController::class, 'show']);
 Route::get('/faq', [WelcomeController::class, 'faq']);
 Route::get('/motivation', [WelcomeController::class, 'motivation']);
-Route::get('/professions', [WelcomeController::class, 'professions']);
+Route::get('/articles', [WelcomeController::class, 'articles']);
 Route::get('/profile', [WelcomeController::class, 'profile']);
 Route::get('/dashboard', [WelcomeController::class, 'dashboard']);
 Route::get('/posts/{post}', [PostsController::class, 'show']);
 Route::get('/faqs', [PostsController::class, 'show']);
+Route::get('/articles/{article}', [ArticlesController::class, 'show']);

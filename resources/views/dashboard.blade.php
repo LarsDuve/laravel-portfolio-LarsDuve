@@ -1,33 +1,12 @@
+@extends('layout')
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Personal Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css\main.css">
-</head>
-
-<body>
-<header>
-    <div class="nav">
-        <ul>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="profile">Profile Page</a></li>
-            <li><a class="active" href="dashboard">Personal Dashboard</a></li>
-            <li><a href="professions">Professions</a></li>
-            <li><a href="motivation">My Motivation</a></li>
-            <li><a href="faq">Frequently Asked Questions</a></li>
-        </ul>
-    </div>
-
-</header>
-<div id="box-container-body">
-    <div id="box-mid-body">
-        <div id="content">
+@section('content')
             <h1>Personal Dashboard</h1>
 
             <table style="height: 270px; width: 610px;">
                 <tbody>
+
                 <tr style="height: 1px;">
                     <th style="width: 100px; height: 1px;">Quatrile</th>
                     <th style="width: 600px; height: 1px;">Course</th>
@@ -35,6 +14,16 @@
                     <th style="width: 400px; height: 1px;">Exam</th>
                     <th style="width: 100px; height: 1px;">Grade</th>
                 </tr>
+{{--                @foreach($grades as $grade)--}}
+{{--                <tr style="height: 45px;">--}}
+{{--                    <td rowspan="3">1</td>    --}}{{--   Not yet implemented!   {{ $grades->quartile }}     --}}
+{{--                    <td>{{ $grades->course_name }}</td>--}}
+{{--                    <td>2,5</td>    --}}{{--   Not yet implemented!   {{ $grades->ec }}     --}}
+{{--                    <td>{{ $grades->test_name }}</td>--}}
+{{--                    <td>{{ $grades->best_grade }}</td>--}}
+{{--                </tr>--}}
+{{--                @endforeach--}}
+
                 <tr style="height: 45px;">
                     <td rowspan="3">1</td>
                     <td>Programme and career orientation</td>
@@ -151,11 +140,4 @@
                 <li><a target="_blank" href="https://teams.microsoft.com/_?culture=nl-nl&country=NL&lm=deeplink&lmsrc=homePageWeb&cmpid=WebSignIn#/school//?ctx=teamsGrid">Teams omgeving</a></li>
                 <li><a target="_blank" href="https://github.com/LarsDuve">Github</a></li>
             </ul>
-            <br><br>
-            <p> </p>
-        </div>
-    </div>
-</div>
-</body>
-
-</html>
+@endsection

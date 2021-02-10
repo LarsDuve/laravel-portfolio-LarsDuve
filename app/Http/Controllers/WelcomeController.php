@@ -3,15 +3,20 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Faq;
 use App\Models\Post;
+use App\Models\Article;
+use App\Models\Grade;
 
 class WelcomeController
 {
     public function show()
     {
-        return view('welcome');
+        $article = Article::take(3)->latest()->get();
+
+        return view('welcome', [
+            'articles' => $article
+        ]);
     }
     public function motivation()
     {
@@ -23,21 +28,25 @@ class WelcomeController
     }
     public function dashboard()
     {
+        $grade = Grade::all();
+        return view('dashboard', [
+            'dashboard' => $grade
+        ]);
         return view('dashboard');
     }
     public function faq()
     {
-//        return view('faq');
-        {
-            $faq = Faq::all();
-            return view('faqs', [
-                'faqs' => $faq
-            ]);
-        }
+        $faq = Faq::all();
+        return view('faqs', [
+            'faqs' => $faq
+        ]);
     }
-    public function professions()
+    public function articles()
     {
-        return view('professions');
+        $article = Article::all();
+        return view('articles', [
+            'articles' => $article
+        ]);
     }
 
     }

@@ -1,29 +1,7 @@
+@extends('layout')
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>My Motivation</title>
-    <link rel="stylesheet" type="text/css" href="css\main.css">
-</head>
-
-<body>
-<header>
-    <div class="nav">
-        <ul>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="profile">Profile Page</a></li>
-            <li><a href="dashboard">Personal Dashboard</a></li>
-            <li><a href="professions">Professions</a></li>
-            <li><a class="active" href="motivation">My Motivation</a></li>
-            <li><a href="faq">Frequently Asked Questions</a></li>
-        </ul>
-    </div>
-
-</header>
-<div id="box-container-body">
-    <div id="box-mid-body">
-        <div id="content">
+@section('content')
             <h1>My Motivation</h1>
             <h3>1. Theory</h3>
             <p>
@@ -70,11 +48,4 @@
             <a target="_blank" href="https://www.123test.nl/prestatiemotivatie/id=ZLV2GLNWSEXZ&version=">https://www.123test.nl/prestatiemotivatie/id=ZLV2GLNWSEXZ&version=</a>
             <p>3.1 Daniel H. Pink (2009). The puzzle of motivation. Based on</p>
             <a target="_blank" href="https://www.123test.nl/schein/id=CTPQCDD9HG5C&version=">https://www.123test.nl/schein/id=CTPQCDD9HG5C&version=</a>
-            <br><br>
-            <p> </p>
-        </div>
-    </div>
-</div>
-</body>
-
-</html>
+@endsection
