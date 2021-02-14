@@ -3,13 +3,12 @@
 
 @section('content')
             <h1>Frequently Asked Questions</h1>
-                <ul>
+            <ul>
                 @foreach($faqs as $faq)
                     <li><h3>{{ $faq->question }}</h3>
                         {{ $faq->answer }}<br>
-                        <a href="{{ $faq->link }}">{{ $faq->link }}</a>
+                        <a href="{{ $faq->link }}" target="_blank">{{ $faq->link }}</a>
                     </li>
-
                 @endforeach
-                </ul>
+            </ul>
 @endsection

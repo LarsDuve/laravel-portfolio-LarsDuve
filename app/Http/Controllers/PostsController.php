@@ -16,11 +16,11 @@ class PostsController extends Controller
 //        ]);
 //    }
 
-    public function show()
-    {
-        $faq = Faq::all();
-        return view('faqs', [
-            'faqs' => $faq
-        ]);
-    }
+//    public function show()
+//    {
+//        $faq = Faq::all();
+//        return view('faqs', [
+//            'faqs' => $faq
+//        ]);
+//    }
 }

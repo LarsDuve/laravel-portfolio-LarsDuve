@@ -14,7 +14,7 @@
             <li><a class="{{ Request::path() === 'dashboard' ? 'active' : '' }}" href="/dashboard">Personal Dashboard</a></li>
             <li><a class="{{ Request::path() === 'articles' ? 'active' : '' }}" href="/articles">Articles</a></li>
             <li><a class="{{ Request::path() === 'motivation' ? 'active' : '' }}" href="/motivation">My Motivation</a></li>
-            <li><a class="{{ Request::path() === 'faq' ? 'active' : '' }}" href="/faq">Frequently Asked Questions</a></li>
+            <li><a class="{{ Request::path() === 'faqs' ? 'active' : '' }}" href="/faqs">Frequently Asked Questions</a></li>
         </ul>
     </div>
 
