@@ -28,7 +28,7 @@ class GradeController extends Controller
     public function index()
     {
         $grade = Grade::all();
-        return view('dashboard', [
+        return view('grades.index', [
             'grades' => $grade
         ]);
     }
@@ -36,16 +36,29 @@ class GradeController extends Controller
     {
 
     }
-    public function edit()
+    public function edit($id)
     {
+        $grade = Grade::find($id);
 
+        return view('grades.edit', ['grade' => $grade]);
     }
-    public function update()
+    public function update($id)
     {
+        $grade = Grade::find($id);
 
+        $grade->quartile = request('quartile');
+        $grade->course_name = request('course_name');
+        $grade->test_name = request('test_name');
+        $grade->ec = request('ec');
+        $grade->best_grade = request('best_grade');
+        $grade->save();
+
+        return redirect('/dashboard/');
     }
-    public function destroy()
+    public function destroy($id)
     {
+        Grade::find($id)->delete();
 
+        return redirect('/dashboard/');
     }
 }

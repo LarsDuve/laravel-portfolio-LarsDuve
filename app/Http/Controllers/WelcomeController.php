@@ -24,11 +24,5 @@ class WelcomeController
     {
         return view('profile');
     }
-//    public function dashboard()
-//    {
-//        $grades = Grade::all();
-//        return view('dashboard', [
-//            'dashboard' => $grades
-//        ]);
-//    }
+
 }

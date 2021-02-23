@@ -18,7 +18,6 @@ class FaqController extends Controller
         $faq->question = request('question');
         $faq->answer = request('answer');
         $faq->link = request('link');
-
         $faq->save();
 
         return redirect('/faqs');
@@ -26,7 +25,7 @@ class FaqController extends Controller
     public function index()
     {
         $faq = Faq::all();
-        return view('faqs', [
+        return view('faqs.index', [
             'faqs' => $faq
         ]);
     }
