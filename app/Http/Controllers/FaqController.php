@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view('faqs.create');
     }
-    public function store(){
-        //dd(request()->all());
+    public function store()
+    {
         $faq = new Faq();
 
         $faq->question = request('question');
@@ -22,7 +23,8 @@ class FaqController extends Controller
 
         return redirect('/faqs');
     }
-    public function index(){
+    public function index()
+    {
         $faq = Faq::all();
         return view('faqs', [
             'faqs' => $faq
@@ -31,13 +33,27 @@ class FaqController extends Controller
     public function show(){
 
     }
-    public function edit(){
+    public function edit($id)
+    {
+        $faq = Faq::find($id);
 
+        return view('faqs.edit', ['faq' => $faq]);
     }
-    public function update(){
+    public function update($id)
+    {
+        $article = Faq::find($id);
 
+        $article->question = request('question');
+        $article->answer = request('answer');
+        $article->link = request('link');
+        $article->save();
+
+        return redirect('/faqs/');
     }
-    public function destroy(){
+    public function destroy($id)
+    {
+        Faq::find($id)->delete();
 
+        return redirect('/faqs/');
     }
 }

@@ -3,7 +3,7 @@
 
 @section('content')
     <h1>New Faq</h1>
-    <form method="POST" action="/articles">
+    <form method="POST" action="/faqs">
         @csrf
         <label for="question">Question</label><br>
         <input type="text" id="question" name="question" size="70" value="The most relevant question of all"><br>

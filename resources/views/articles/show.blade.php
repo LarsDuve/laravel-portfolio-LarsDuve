@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1><a href="{{ $article->link }}" style="text-decoration: none">{{ $article->title }}</a></h1>
+    <h1><a href="{{ $article->link }}" style="text-decoration: none">{{ $article->title }}</a> <a href="/articles/{{ $article->id }}/edit"><span>&#9998;</span></a></h1>
     <p>{{ $article->body }}</p>
 
 @endsection
