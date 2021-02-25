@@ -10,6 +10,7 @@ class Grade extends Model
 
 {
     protected $grade;
+    protected $fillable = ['quartile', 'course_name', 'test_name', 'ec', 'best_grade'];
 
     use HasFactory;
     public function newResult($grade)

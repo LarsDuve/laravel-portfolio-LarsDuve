@@ -7,12 +7,25 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
+    public function index()
+    {
+        $faq = Faq::all();
+        return view('faqs.index', [
+            'faqs' => $faq
+        ]);
+    }
     public function create()
     {
         return view('faqs.create');
     }
-    public function store()
+    public function store(Request $request)
     {
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required',
+            'link' => 'required',
+        ]);
+
         $faq = new Faq();
 
         $faq->question = request('question');
@@ -22,36 +35,32 @@ class FaqController extends Controller
 
         return redirect('/faqs');
     }
-    public function index()
-    {
-        $faq = Faq::all();
-        return view('faqs.index', [
-            'faqs' => $faq
-        ]);
-    }
     public function show(){
 
     }
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        $faq = Faq::find($id);
-
         return view('faqs.edit', ['faq' => $faq]);
     }
-    public function update($id)
+    public function update(Request $request)
     {
-        $article = Faq::find($id);
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required',
+            'link' => 'required',
+        ]);
 
-        $article->question = request('question');
-        $article->answer = request('answer');
-        $article->link = request('link');
-        $article->save();
+        Faq::create([
+            'question' => request('question'),
+            'answer' => request('answer'),
+            'link' => request('link'),
+        ]);
 
         return redirect('/faqs/');
     }
-    public function destroy($id)
+    public function destroy(Faq $faq)
     {
-        Faq::find($id)->delete();
+        $faq->delete();
 
         return redirect('/faqs/');
     }

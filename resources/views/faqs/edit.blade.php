@@ -8,13 +8,13 @@
         @method('PUT')
 
         <label for="question">Question</label><br>
-        <input type="text" id="question" name="question" size="160" value="{{ $faq->question }}"><br>
+        <textarea id="question" name="question" rows="4" cols="170">{{ $faq->question }}</textarea><br>
 
         <label for="answer">Answer</label><br>
-        <input type="text" id="answer" name="answer" size="160" value="{{ $faq->answer }}"><br>
+        <textarea id="answer" name="answer" rows="4" cols="170">{{ $faq->answer }}</textarea><br>
 
         <label for="link">Link</label><br>
-        <input type="text" id="link" name="link" size="160" value="{{ $faq->link }}"><br><br>
+        <textarea id="link" name="link" rows="4" cols="170">{{ $faq->link }}</textarea><br><br>
 
         <input type="submit" value="Save">
     </form><br>

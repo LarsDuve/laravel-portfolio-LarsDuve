@@ -16,7 +16,7 @@ class FaqSeeder extends Seeder
     {
         DB::table('faqs')->insert([
             'question' => 'How can you print a document from your laptop at HZ?',
-            'answer' => 'To print a document you go to &#39;print&#39; and select the:&#39;HP Color Laserjet&#39;.',
+            'answer' => "To print a document you go to 'print' and select the: 'HP Color Laserjet'.",
             'link' => ''
         ]);
         DB::table('faqs')->insert([

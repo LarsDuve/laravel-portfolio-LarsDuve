@@ -7,22 +7,6 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-
-    public function create()
-    {
-        return view('articles.create');
-    }
-    public function store()
-    {
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-
-        return redirect('/articles');
-    }
     public function index()
     {
         $article = Article::latest('updated_at')->get();
@@ -30,33 +14,53 @@ class ArticlesController extends Controller
             'articles' => $article
         ]);
     }
-    public function show($id)
+    public function create()
     {
-        $article = Article::find($id);
+        return view('articles.create');
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+        ]);
 
+        Article::create([
+            'title' => request('title'),
+            'excerpt' => request('excerpt'),
+            'body' => request('body'),
+        ]);
+
+        return redirect(route('articles.index'));
+    }
+    public function show(Article $article)
+    {
         return view('articles.show', ['article' => $article]);
     }
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
-
         return view('articles.edit', ['article' => $article]);
     }
-    public function update($id)
+    public function update(Request $request, Article $article)
     {
-        $article = Article::find($id);
+        $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+        ]);
 
         $article->title = request('title');
         $article->excerpt = request('excerpt');
         $article->body = request('body');
         $article->save();
 
-        return redirect('/articles/'. $article->id);
+        return redirect($article->path());
     }
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-        Article::find($id)->delete();
+        $article->delete();
 
-        return redirect('/articles/');
+        return redirect(route('articles.index'));
     }
 }

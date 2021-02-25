@@ -100,7 +100,7 @@ class GradeSeeder extends Seeder
         ]);
         DB::table('grades')->insert([
             'quartile' => '4',
-            'course_name' => 'Framework Project 2',
+            'course_name' => 'Professional Skills 3',
             'test_name' => '2 Written Exams',
             'ec' => '1.25'
         ]);
