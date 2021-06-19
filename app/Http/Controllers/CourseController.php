@@ -2,36 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 
-class GradeController extends Controller
+class CourseController extends Controller
 {
     public function index()
     {
-
+        $course = Course::all();
         $grade = Grade::all();
-        return view('grades.index', [
-            'grades' => $grade
-        ]);
+        return view('grades.index', ['courses' => $course, 'grades' => $grade]);
     }
     public function create()
     {
         return view('grades.create');
     }
-    public function store(Request $request, Grade $grade)
+    public function store(Request $request, Course $course)
     {
         $request->validate([
             'quartile' => 'required',
             'course_name' => 'required',
-            'test_name' => 'required',
             'ec' => 'required'
         ]);
 
-        Grade::create([
+        Course::create([
             'quartile' => request('quartile'),
             'course_name' => request('course_name'),
-            'test_name' => request('test_name'),
             'ec' => request('ec'),
         ]);
 
@@ -41,32 +38,29 @@ class GradeController extends Controller
     {
 
     }
-    public function edit(Grade $grade)
+    public function edit(Course $course)
     {
-        return view('grades.edit', ['grade' => $grade]);
+        return view('grades.edit', ['course' => $course]);
     }
-    public function update(Request $request, Grade $grade)
+    public function update(Request $request, Course $course)
     {
         $request->validate([
             'quartile' => 'required',
             'course_name' => 'required',
-            'test_name' => 'required',
             'ec' => 'required'
         ]);
 
-        Grade::create([
+        Course::create([
             'quartile' => request('quartile'),
             'course_name' => request('course_name'),
-            'test_name' => request('test_name'),
             'ec' => request('ec'),
-            'best_grade' => request('best_grade'),
         ]);
 
         return redirect('/dashboard/');
     }
-    public function destroy(Grade $grade)
+    public function destroy(Course $course)
     {
-        $grade->delete();
+        $course->delete();
 
         return redirect('/dashboard/');
     }

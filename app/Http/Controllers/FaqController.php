@@ -16,7 +16,7 @@ class FaqController extends Controller
     }
     public function create()
     {
-        return view('faqs.create');
+        return view('admin.createfaq');
     }
     public function store(Request $request)
     {
@@ -33,16 +33,16 @@ class FaqController extends Controller
         $faq->link = request('link');
         $faq->save();
 
-        return redirect('/faqs');
+        return redirect($faq->path());
     }
     public function show(){
 
     }
     public function edit(Faq $faq)
     {
-        return view('faqs.edit', ['faq' => $faq]);
+        return view('admin.editfaq', ['faq' => $faq]);
     }
-    public function update(Request $request)
+    public function update(Request $request, Faq $faq)
     {
         $request->validate([
             'question' => 'required',
@@ -56,12 +56,12 @@ class FaqController extends Controller
             'link' => request('link'),
         ]);
 
-        return redirect('/faqs/');
+        return redirect($faq->path());
     }
     public function destroy(Faq $faq)
     {
         $faq->delete();
 
-        return redirect('/faqs/');
+        return redirect($faq->path());
     }
 }

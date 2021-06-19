@@ -10,7 +10,7 @@ class Grade extends Model
 
 {
     protected $grade;
-    protected $fillable = ['quartile', 'course_name', 'test_name', 'ec', 'best_grade'];
+    protected $fillable = ['quartile', 'course_name', 'test_name', 'ec'];
 
     use HasFactory;
     public function newResult($grade)
@@ -22,13 +22,16 @@ class Grade extends Model
         }
 
         $this->best_grade = $grade;
+    }
 
-        if ($this->best_result >= $this->lowest_passing_grade)
-        {
-            $this->passed_at = now();
-        }
+    public function path()
+    {
+        return route('grades.index', $this);
+    }
 
-        $this->save();
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
     }
 
 }

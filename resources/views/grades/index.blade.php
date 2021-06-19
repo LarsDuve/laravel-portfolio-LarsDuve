@@ -14,21 +14,30 @@
             <th style="width: 400px; height: 1px;">Exam</th>
             <th style="width: 100px; height: 1px;">Grade</th>
         </tr>
-        @foreach($grades as $grade)
+        @foreach($courses as $course)
             <tr style="height: 45px;">
-                <td style="border-left-width: 4px;">{{ $grade->quartile }}</td>
-                <td>{{ $grade->course_name }}</td>
-                <td>{{ $grade->ec }}</td>
+                <td style="border-left-width: 4px;">{{ $course->quartile }}</td>
+                <td>{{ $course->course_name }}</td>
+                <td>{{ $course->ec }}</td>
                 <td>{{ $grade->test_name }}</td>
                 <td style="border-right-width: 4px;">{{ $grade->best_grade }} </td>
-                <td style="border: 0"><a style="text-decoration: none; color: darkblue; " href="/dashboard/{{ $grade->id }}/edit"><span>&#9998;</span></a></td>
+                <td style="border: 0"><a style="text-decoration: none; color: darkblue;" href="/dashboard/{{ $course->id }}/edit"><span>&#9998;</span></a></td>
             </tr>
         @endforeach
+
+
+{{--        @foreach($grades as $grade)--}}
+{{--            <tr style="height: 45px;">--}}
+{{--                <td>{{ $grade->test_name }}</td>--}}
+{{--                <td style="border-right-width: 4px;">{{ $grade->best_grade }} </td>--}}
+{{--                <td style="border: 0"><a style="text-decoration: none; color: darkblue; " href="/dashboard/{{ $grade->id }}/edit"><span>&#9998;</span></a></td>--}}
+{{--            </tr>--}}
+{{--        @endforeach--}}
         </tbody>
     </table><br>
     <div id="flexbox-container">
         <!--Between div, adjust the percentage based on your progress. (also in main.css)-->
-        <div id="flexbox-progress">27.5 / 60 EC</div>
+        <div id="flexbox-progress">32.5 / 60 EC</div>
     </div>
     <h2>Study links</h2>
     <ul>

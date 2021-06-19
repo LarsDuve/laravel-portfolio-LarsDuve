@@ -100,7 +100,7 @@ td {
 #flexbox-progress {
     background-color: rgb(56, 56, 56);
     /*In width, adjust the percentage based on your progress. (also in dashboard.blade.php)*/
-    width: 46%;
+    width: 54%;
     height: 23px;
     text-align: center;
     margin: 0px;

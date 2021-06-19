@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
-class ArticlesController extends Controller
+class ArticleController extends Controller
 {
     public function index()
     {
-        $article = Article::latest('updated_at')->get();
+        $article=Article::latest('updated_at')->get();
         return view('articles.index', [
             'articles' => $article
         ]);

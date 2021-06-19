@@ -12,6 +12,6 @@ class Faq extends Model
 
     public function path()
     {
-        return route('faqs.show', $this);
+        return route('faqs.index', $this);
     }
 }

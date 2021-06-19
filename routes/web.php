@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +25,16 @@ Route::get('/motivation', [WelcomeController::class, 'motivation']);
 
 Route::get('/profile', [WelcomeController::class, 'profile']);
 
-Route::resource('/dashboard', GradeController::class);
+Route::resource('/dashboard', CourseController::class);
+//Route::resource('/dashboard', GradeController::class);
 
-Route::resource('/articles', ArticlesController::class);
+Route::resource('/articles', ArticleController::class);
 
 Route::resource('/faqs', FaqController::class);
+
+Route::get('login', [UserAuthController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('register', [UserAuthController::class, 'register'])->middleware('alreadyLoggedIn');
+Route::post('create', [UserAuthController::class, 'create'])->name('auth.create');
+Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
+Route::get('profile', [UserAuthController::class, 'profile'])->middleware('isLogged');
+Route::get('logout', [UserAuthController::class, 'logout']);

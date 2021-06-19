@@ -34,11 +34,16 @@
         @enderror
         <br><br>
 
+
+
         <input type="submit" value="Save">
     </form><br>
+
     <form method="POST" action="/articles/{{ $article->id }}">
         @csrf
         @method('DELETE')
         <button type="submit">Delete</button>
     </form>
+
+
 @endsection

@@ -16,6 +16,8 @@
             <li><a class="{{ Request::path() === 'motivation' ? 'active' : '' }}" href="/motivation">My Motivation</a></li>
             <li><a class="{{ Request::path() === 'faqs' ? 'active' : '' }}" href="/faqs">Frequently Asked Questions</a></li>
         </ul>
+
+
     </div>
 
 </header>

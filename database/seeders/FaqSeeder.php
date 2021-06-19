@@ -31,8 +31,8 @@ class FaqSeeder extends Seeder
         ]);
         DB::table('faqs')->insert([
             'question' => 'How can you book a project space in one of the wings?',
-            'answer' => 'On topdesk.hz.nl you can reserve a project space to use.',
-            'link' => 'https://topdesk.hz.nl/tas/public/ssp/'
+            'answer' => 'On hzuniversity.topdesk.net you can reserve a project space to use.',
+            'link' => 'https://hzuniversity.topdesk.net/tas/public/ssp/'
         ]);
         DB::table('faqs')->insert([
             'question' => 'What are the instructions if you want to park your car at the HZ parking lot?',
