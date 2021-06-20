@@ -16,7 +16,7 @@ class FaqController extends Controller
     }
     public function create()
     {
-        return view('admin.createfaq');
+        return view('faqs/create');
     }
     public function store(Request $request)
     {
@@ -33,14 +33,14 @@ class FaqController extends Controller
         $faq->link = request('link');
         $faq->save();
 
-        return redirect($faq->path());
+        return view('faqs.index');
     }
     public function show(){
 
     }
     public function edit(Faq $faq)
     {
-        return view('admin.editfaq', ['faq' => $faq]);
+        return view('faqs/edit', ['faq' => $faq]);
     }
     public function update(Request $request, Faq $faq)
     {
@@ -61,6 +61,7 @@ class FaqController extends Controller
     public function destroy(Faq $faq)
     {
         $faq->delete();
+        dd($faq);
 
         return redirect($faq->path());
     }

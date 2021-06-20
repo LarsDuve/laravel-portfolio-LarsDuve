@@ -20,6 +20,8 @@
        <input type="password" name="password" placeholder="Enter password">
        <span>@error('password'){{ $message }} @enderror</span>
 
+       <label for="">Remember Me</label>
+       <input type="checkbox" name="remember_me" value="1">
 
        <button type="submit">Login</button>
        <br>

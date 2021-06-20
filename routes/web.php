@@ -30,7 +30,19 @@ Route::resource('/dashboard', CourseController::class);
 
 Route::resource('/articles', ArticleController::class);
 
-Route::resource('/faqs', FaqController::class);
+
+//Route::resource('/faqs', FaqController::class);
+
+Route::get('faqs/create', [FaqController::class, 'create'])->middleware('isLogged');
+Route::post('faqs', [FaqController::class, 'store']);
+//READ
+Route::get('faqs', [FaqController::class, 'index']);
+//UPDATE
+Route::get('faqs/{faq}/edit', [FaqController::class, 'edit'])->middleware('isLogged');
+Route::put('faqs/{faq}', [FaqController::class, 'update']);
+//DELETE
+Route::delete('faqs/{faq}', [FaqController::class, 'destroy'])->middleware('isLogged');
+
 
 Route::get('login', [UserAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('register', [UserAuthController::class, 'register'])->middleware('alreadyLoggedIn');
