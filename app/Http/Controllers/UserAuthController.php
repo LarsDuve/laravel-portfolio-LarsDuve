@@ -21,8 +21,7 @@ class UserAuthController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|email|unique:users',
-            'password'=>'required'
-//            'password'=>'required|min:10|max50'
+            'password'=>'required|min:10|max50'
         ]);
 
         $query = DB::table('users')->insert([
@@ -52,24 +51,13 @@ class UserAuthController extends Controller
         if ($user){
             if (Hash::check($request->password, $user->password)){
                 $request->session()->put('LoggedUser', $user->id);
-                return redirect('profile');
+                return redirect('/');
             }else{
                 return back()->with('fail', 'Invalid password');
             }
         }else{
             return back()->with('fail', 'No account found for this email');
         }
-    }
-
-    function profile(){
-        $user = DB::table('users')
-            ->where('id', session('LoggedUser'))
-            ->first();
-        $data = [
-            "LoggedUserInfo"=>$user
-        ];
-        return view('admin.profile', $data);
-
     }
 
     function logout(){
